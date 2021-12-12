@@ -18,7 +18,7 @@
 				$uhrzeit = date("H:i", $timestamp);
 				$datum = date("d.m.Y", $timestamp);
 				$text = "</b>".$datum." - ".$uhrzeit."</b> &#x2192 <b>".$_IPS['Message']." </b>";
-				IPS_RunScriptWaitEx($_IPS['RXObjectID'], array('action' => 'add', 'text' => $text, 'expires' => time() - 10, 'removable' => true, 'type' => $_IPS['Type']));
+				
 	],
     "restrictions": {
     },
