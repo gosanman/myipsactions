@@ -15,7 +15,7 @@
     ],
     "action": [
         "$timestamp = time();",
-        "$action = json_decode($_IPS['ACTION'], true);",
+        "$uhrzeit = date('H:i', $timestamp);",
         "echo IPS_RunActionWait($action['actionID'], $targetVariableID, $action['parameters']);"
     ],
     "restrictions": {
