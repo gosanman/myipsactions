@@ -14,9 +14,10 @@
 				}
     ],
     "action": [
-			"	$timestamp = time();"
-			
-	],
+        "$targetVariableID = IPS_GetObjectIDByIdent($_IPS['IDENT'], $_IPS['TARGET']);",
+        "$action = json_decode($_IPS['ACTION'], true);",
+        "echo IPS_RunActionWait($action['actionID'], $targetVariableID, $action['parameters']);"
+    ],
     "restrictions": {
     },
     "locale": {
