@@ -6,9 +6,10 @@
 				{ "type": "ValidationTextBox", "name": "Message", "caption": "Meldung" },
 				{ "type": "Select", "name": "Type", "caption": "Art der Meldung",
 					"options": [
+						{ "caption": "Information (grün)", "value": "0" },
 						{ "caption": "Fehler (rot)", "value": "1" },
 						{ "caption": "Warnung (gelb)", "value": "2" },
-						{ "caption": "Todo (blau)", "value": "3" },
+						{ "caption": "Aufgabe (blau)", "value": "3" },
 						{ "caption": "Goto (orange)", "value": "4" }
 					]
 				}
