@@ -14,7 +14,7 @@
 				}
     ],
     "action": [
-        "$targetVariableID = IPS_GetObjectIDByIdent($_IPS['IDENT'], $_IPS['TARGET']);",
+        "$timestamp = time();",
         "$action = json_decode($_IPS['ACTION'], true);",
         "echo IPS_RunActionWait($action['actionID'], $targetVariableID, $action['parameters']);"
     ],
