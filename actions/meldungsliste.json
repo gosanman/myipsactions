@@ -7,7 +7,7 @@
 				{ "type": "Select", "name": "Type", "caption": "Art der Meldung",
 					"options": [
 						{ "caption": "Fehler (rot)", "value": "1" },
-						{ "caption": "Warnung(gelb)", "value": "2" },
+						{ "caption": "Warnung (gelb)", "value": "2" },
 						{ "caption": "Todo (blau)", "value": "3" },
 						{ "caption": "Goto (orange)", "value": "4" }
 					]
