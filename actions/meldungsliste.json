@@ -16,7 +16,7 @@
     "action": [
         "$timestamp = time();",
         "$uhrzeit = date('H:i', $timestamp);",
-        "echo IPS_RunActionWait($action['actionID'], $targetVariableID, $action['parameters']);"
+        "$text = '</b>'.$datum.' - '.$uhrzeit.'</b> &#x2192 <b>'.$_IPS['Message'].' </b>';"
     ],
     "restrictions": {
     },
