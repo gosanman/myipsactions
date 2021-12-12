@@ -14,7 +14,9 @@
 				}
     ],
     "action": [
-
+				$timestamp = time();
+				$uhrzeit = date("H:i", $timestamp);
+				$datum = date("d.m.Y", $timestamp);
 				
 	],
     "restrictions": {
