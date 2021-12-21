@@ -1,6 +1,6 @@
 {
     "id": "{E102C480-11D0-E814-4AC5-D4F876EC53F9}",
-    "caption": "Nachricht in Meldungsliste hinzufügen",
+    "caption": "Nachricht an Meldungsliste",
     "form": [
 				{ "type": "SelectScript", "name": "RXObjectID", "caption": "Script Meldungsliste" },
 				{ "type": "ValidationTextBox", "name": "Message", "caption": "Meldung" },
@@ -12,14 +12,17 @@
 						{ "caption": "Aufgabe (blau)", "value": "3" },
 						{ "caption": "Goto (orange)", "value": "4" }
 					]
-				}
+				},
+				{ "type": "NumberSpinner", "name": "Expires", "caption": "Meldung läuft ab nach", "suffix": "Minuten"}
     ],
     "action": [
         "$timestamp = time();",
         "$uhrzeit = date('H:i', $timestamp);",
-	"$datum = date('d.m.Y', $timestamp);",
+		"$datum = date('d.m.Y', $timestamp);",
         "$text = '</b>'.$datum.' - '.$uhrzeit.'</b> &#x2192 <b>'.$_IPS['Message'].' </b>';",
-	"IPS_RunScriptWaitEx($_IPS['RXObjectID'], array('action' => 'add', 'text' => $text, 'expires' => time() - 10, 'removable' => true, 'type' => $_IPS['Type']));"
+		"$expires = 0;",
+		"if ($_IPS['Expires'] != 0) { $expires = time() + ($time * 60); }",
+		"IPS_RunScriptWaitEx($_IPS['RXObjectID'], array('action' => 'add', 'text' => $text, 'expires' => $expires, 'removable' => true, 'type' => $_IPS['Type']));"
     ],
     "restrictions": {
     },
