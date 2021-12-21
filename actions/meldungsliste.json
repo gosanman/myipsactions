@@ -18,7 +18,7 @@
 					"items": [
 						{ "type": "SelectInstance", "name": "WebFrontID", "caption": "WebFront" },
 						{ "type": "CheckBox", "name": "PushNotification", "caption": "Push-Nachricht senden" },
-						{ "type": "CheckBox", "name": "SendNotification", "caption": "Nachricht an WebFront senden" },
+						{ "type": "CheckBox", "name": "SendNotification", "caption": "Nachricht an WebFront senden" }
 					]
 				}
     ],			
