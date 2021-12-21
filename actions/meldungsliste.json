@@ -15,14 +15,14 @@
 								{ "caption": "Goto (orange)", "value": "4" }
 							]
 						},
-						{ "type": "NumberSpinner", "name": "Expires", "caption": "Meldung läuft ab nach", "suffix": "Minuten"},
-						{ "type": "ExpansionPanel", "caption": "Erweiterte Einstellungen",
-							"items": [
-								{ "type": "SelectInstance", "name": "WebFrontID", "caption": "WebFront" },
-								{ "type": "CheckBox", "name": "PushNotification", "caption": "Push-Nachricht senden" },
-								{ "type": "CheckBox", "name": "SendNotification", "caption": "Nachricht an WebFront senden" }
-							]
-						}
+						{ "type": "NumberSpinner", "name": "Expires", "caption": "Meldung läuft ab nach", "suffix": "Minuten"}
+					]
+				},
+				{ "type": "ColumnLayout",
+					"items": [
+						{ "type": "SelectInstance", "name": "WebFrontID", "caption": "WebFront" },
+						{ "type": "CheckBox", "name": "PushNotification", "caption": "Push-Nachricht senden" },
+						{ "type": "CheckBox", "name": "SendNotification", "caption": "Nachricht an WebFront senden" }
 					]
 				}
     ],			
