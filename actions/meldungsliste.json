@@ -13,8 +13,15 @@
 						{ "caption": "Goto (orange)", "value": "4" }
 					]
 				},
-				{ "type": "NumberSpinner", "name": "Expires", "caption": "Meldung läuft ab nach", "suffix": "Minuten"}
-    ],
+				{ "type": "NumberSpinner", "name": "Expires", "caption": "Meldung läuft ab nach", "suffix": "Minuten"},
+				{ "type": "ExpansionPanel", "caption": "Erweiterte Einstellungen",
+					"items": [
+						{ "type": "SelectInstance", "name": "WebFrontID", "caption": "WebFront" },
+						{ "type": "CheckBox", "name": "PushNotification", "caption": "Push-Nachricht senden" },
+						{ "type": "CheckBox", "name": "SendNotification", "caption": "Nachricht an WebFront senden" },
+					]
+				}
+    ],			
     "action": [
         "$timestamp = time();",
         "$uhrzeit = date('H:i', $timestamp);",
@@ -22,7 +29,9 @@
         "$text = '</b>'.$datum.' - '.$uhrzeit.'</b> &#x2192 <b>'.$_IPS['Message'].' </b>';",
 		"$expires = 0;",
 		"if ($_IPS['Expires'] != 0) { $expires = time() + ($time * 60); }",
-		"IPS_RunScriptWaitEx($_IPS['RXObjectID'], array('action' => 'add', 'text' => $text, 'expires' => $expires, 'removable' => true, 'type' => $_IPS['Type']));"
+		"IPS_RunScriptWaitEx($_IPS['RXObjectID'], array('action' => 'add', 'text' => $text, 'expires' => $expires, 'removable' => true, 'type' => $_IPS['Type']));",
+		"if ($_IPS['PushNotification'] == true) { WFC_PushNotification($_IPS['WebFrontID'], substr($_IPS['Message'], 0, 30), $_IPS['Message'], 'alarm', 0); }",
+		"if ($_IPS['SendNotification'] == true) { WFC_SendNotification($_IPS['WebFrontID'], substr($_IPS['Message'], 0, 30), $_IPS['Message'], 'Alert', $_IPS['Expires']); }"
     ],
     "restrictions": {
     },
