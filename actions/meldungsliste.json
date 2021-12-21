@@ -14,7 +14,7 @@
 					]
 				},
 				{ "type": "NumberSpinner", "name": "Expires", "caption": "Meldung läuft ab nach", "suffix": "Minuten"},
-				{ "type": "Label", "caption": "zusätzliche Einstellungen für die Benachrichtigung", "underline": true },
+				{ "type": "Label", "caption": "=== Zusätzliche Benachrichtigungsarten konfigurieren ===", "bold": true },
 				{ "type": "SelectInstance", "name": "WebFrontID", "caption": "WebFront" },
 				{ "type": "CheckBox", "name": "PushNotification", "caption": "Push-Nachricht senden" },
 				{ "type": "CheckBox", "name": "SendNotification", "caption": "Nachricht an WebFront senden" }
