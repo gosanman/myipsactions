@@ -2,23 +2,27 @@
     "id": "{E102C480-11D0-E814-4AC5-D4F876EC53F9}",
     "caption": "Nachricht an Meldungsliste",
     "form": [
-				{ "type": "SelectScript", "name": "RXObjectID", "caption": "Script Meldungsliste" },
-				{ "type": "ValidationTextBox", "name": "Message", "caption": "Meldung" },
-				{ "type": "Select", "name": "Type", "caption": "Art der Meldung",
-					"options": [
-						{ "caption": "Information (grün)", "value": "0" },
-						{ "caption": "Fehler (rot)", "value": "1" },
-						{ "caption": "Warnung (gelb)", "value": "2" },
-						{ "caption": "Aufgabe (blau)", "value": "3" },
-						{ "caption": "Goto (orange)", "value": "4" }
-					]
-				},
-				{ "type": "NumberSpinner", "name": "Expires", "caption": "Meldung läuft ab nach", "suffix": "Minuten"},
-				{ "type": "ExpansionPanel", "caption": "Erweiterte Einstellungen",
+				{ "type": "ColumnLayout",
 					"items": [
-						{ "type": "SelectInstance", "name": "WebFrontID", "caption": "WebFront" },
-						{ "type": "CheckBox", "name": "PushNotification", "caption": "Push-Nachricht senden" },
-						{ "type": "CheckBox", "name": "SendNotification", "caption": "Nachricht an WebFront senden" }
+						{ "type": "SelectScript", "name": "RXObjectID", "caption": "Script Meldungsliste" },
+						{ "type": "ValidationTextBox", "name": "Message", "caption": "Meldung" },
+						{ "type": "Select", "name": "Type", "caption": "Art der Meldung",
+							"options": [
+								{ "caption": "Information (grün)", "value": "0" },
+								{ "caption": "Fehler (rot)", "value": "1" },
+								{ "caption": "Warnung (gelb)", "value": "2" },
+								{ "caption": "Aufgabe (blau)", "value": "3" },
+								{ "caption": "Goto (orange)", "value": "4" }
+							]
+						},
+						{ "type": "NumberSpinner", "name": "Expires", "caption": "Meldung läuft ab nach", "suffix": "Minuten"},
+						{ "type": "ExpansionPanel", "caption": "Erweiterte Einstellungen",
+							"items": [
+								{ "type": "SelectInstance", "name": "WebFrontID", "caption": "WebFront" },
+								{ "type": "CheckBox", "name": "PushNotification", "caption": "Push-Nachricht senden" },
+								{ "type": "CheckBox", "name": "SendNotification", "caption": "Nachricht an WebFront senden" }
+							]
+						}
 					]
 				}
     ],			
