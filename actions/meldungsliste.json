@@ -14,6 +14,7 @@
 					]
 				},
 				{ "type": "NumberSpinner", "name": "Expires", "caption": "Meldung läuft ab nach", "suffix": "Minuten"},
+				{ "type": "CheckBox", "name": "Removable", "caption": "Meldung kann gelöscht werden" },
 				{ "type": "Label", "caption": "=== Zusätzliche Benachrichtigungsarten konfigurieren ===", "bold": true },
 				{ "type": "SelectInstance", "name": "WebFrontID", "caption": "WebFront" },
 				{ "type": "CheckBox", "name": "PushNotification", "caption": "Push-Nachricht senden" },
@@ -27,7 +28,7 @@
         "$text = '</b>'.$datum.' - '.$uhrzeit.'</b> &#x2192 <b>'.$_IPS['Message'].' </b>';",
 		"$expires = 0;",
 		"if ($_IPS['Expires'] != 0) { $expires = time() + ($time * 60); }",
-		"IPS_RunScriptWaitEx($_IPS['RXObjectID'], array('action' => 'add', 'text' => $text, 'expires' => $expires, 'removable' => true, 'type' => $_IPS['Type']));",
+		"IPS_RunScriptWaitEx($_IPS['RXObjectID'], array('action' => 'add', 'text' => $text, 'expires' => $expires, 'removable' => $_IPS['Removable'], 'type' => $_IPS['Type']));",
 		"if ($_IPS['PushNotification'] == true) { WFC_PushNotification($_IPS['WebFrontID'], substr($_IPS['Message'], 0, 30), $_IPS['Message'], 'alarm', 0); }",
 		"if ($_IPS['SendNotification'] == true) { WFC_SendNotification($_IPS['WebFrontID'], substr($_IPS['Message'], 0, 30), $_IPS['Message'], 'Alert', $_IPS['Expires']); }"
     ],
